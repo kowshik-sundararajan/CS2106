@@ -90,13 +90,11 @@ void* loggerThread(void *logfptr) {
 	}
 }
 
-void  INThandler(int sig) {
+void INThandler(int sig) {
    signal(sig, SIG_IGN);
-
    fclose(logfptr);
    exit(0);
 }
-
 
 char *getCurrentTime() {
 	time_t t = time(NULL);
